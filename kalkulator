@@ -1,0 +1,64 @@
+<html>
+<head>
+        <style>
+            #kalkulator
+            {
+                text-align: center;
+                margin-top: 200px;
+            }
+			
+			#body
+			{
+			background-color: grey;
+			}
+			
+        </style>
+
+        <script>
+            function sprawdz()
+            {
+          var cena1 = parseFloat(document.getElementById("Cena").value);
+          var ilosc1 = parseFloat(document.getElementById("Ilosc").value);
+          var vat = document.getElementById("Vat").checked;
+          var podatkiem = document.getElementById("Podatek").checked;
+          var ile = ilosc1 * cena1;
+          var cenaile = document.getElementById("Wynik").innerHTML = 'Cena: ' + ile;
+
+            
+       
+
+            if(vat == true)
+            {
+              var cenaile =   document.getElementById("Wynik1").innerHTML = 'Cena Brutto:' + ile*1.23;
+               
+            }
+            if(podatkiem  == true)
+            {
+               var podatki =  ile*1.18;
+               var ile_razem = document.getElementById("Wynik2").innerHTML = 'Cena z podatkiem: '+ podatki*1.23;
+            }
+            };
+        </script>
+
+    </head>
+
+    <body>
+	<center><div id="Wynik"></div></div></center>
+       <center><div id="Wynik1"></div></div></center>
+       <center><div id="Wynik2"></div></div></center>
+	   
+	   
+        <div id="kalkulator">
+        Cena:<input type="text" id="Cena"onkeyup="sprawdz()">
+        Ilosc:<input type="text" id="Ilosc"onkeyup="sprawdz()">
+    </br></br>
+
+       Vat <input type="checkbox" id="Vat" onclick="sprawdz()">
+       Podatek <input type="checkbox" id="Podatek"  onclick="sprawdz()">
+
+      </div>
+       
+	 <div id="body">
+	 </div>
+    </body>
+</html>
